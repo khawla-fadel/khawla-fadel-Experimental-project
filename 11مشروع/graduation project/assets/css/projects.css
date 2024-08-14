@@ -1,0 +1,317 @@
+
+.view-projects,.view-projects3 {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 30px;
+    margin-left: 10px;
+}
+
+
+.project-section {
+    margin-top: 50px;
+}
+
+.project-section>h1 {
+    color: #1389ff;
+   font-family:Crete Round;
+   font-size: 30px;
+   text-align: center;
+}
+
+
+.flip-card {
+    background-color: transparent;
+   width: 300px;
+    height: 250px;
+    perspective: 1000px;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.flip-card-front {
+    background-color: #bbb;
+    color: black;
+}
+
+.flip-card-back {
+    background: #0171d2;
+    color: white;
+    transform: rotateY(180deg);
+}
+
+.flip-card-back h1 {
+    margin-top: 20px;
+}
+
+
+
+
+/* CSS */
+.button-17 {
+    margin-top: 100px;
+    align-items: center;
+    appearance: none;
+    background-color: #fff;
+    border-radius: 24px;
+    border-style: none;
+    box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px, rgba(0, 0, 0, .14) 0 6px 10px 0, rgba(0, 0, 0, .12) 0 1px 18px 0;
+    box-sizing: border-box;
+    color: #084879;
+    cursor: pointer;
+    display: inline-flex;
+    fill: currentcolor;
+    font-family: "Google Sans", Roboto, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    height: 45px;
+    justify-content: center;
+    letter-spacing: .25px;
+    line-height: normal;
+    max-width: 100%;
+    overflow: visible;
+    padding: 2px 24px;
+    position: relative;
+    text-align: center;
+    text-transform: none;
+    transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1), opacity 15ms linear 30ms, transform 270ms cubic-bezier(0, 0, .2, 1) 0ms;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: auto;
+    will-change: transform, opacity;
+    z-index: 0;
+}
+
+.button-17:hover {
+    background: #F6F9FE;
+    color: #01d28e;
+}
+
+.button-17:active {
+    box-shadow: 0 4px 4px 0 rgb(60 64 67 / 30%), 0 8px 12px 6px rgb(60 64 67 / 15%);
+    outline: none;
+}
+
+.button-17:focus {
+    outline: none;
+    border: 2px solid #01d28e;
+}
+
+.button-17:not(:disabled) {
+    box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+}
+
+.button-17:not(:disabled):hover {
+    box-shadow: rgba(60, 64, 67, .3) 0 2px 3px 0, rgba(60, 64, 67, .15) 0 6px 10px 4px;
+}
+
+.button-17:not(:disabled):focus {
+    box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+}
+
+.button-17:not(:disabled):active {
+    box-shadow: rgba(60, 64, 67, .3) 0 4px 4px 0, rgba(60, 64, 67, .15) 0 8px 12px 6px;
+}
+
+.button-17:disabled {
+    box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+}
+
+
+
+
+.see-more {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    margin-left: 50px;
+}
+
+.button-24 {
+    background: #016dd2;
+    border: 1px solid #0166d2;
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: nunito, roboto, proxima-nova, "proxima nova", sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 16px;
+    min-height: 40px;
+    width: 10%;
+    outline: 0;
+    text-align: center;
+    text-rendering: geometricprecision;
+    text-transform: none;
+    user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+}
+
+.button-24:hover,
+.button-24:active {
+    background-color: initial;
+    background-position: 0 0;
+    color: #01d28e;
+}
+
+.button-24:active {
+    opacity: .5;
+}
+
+#view2-projects,#view3-projects {
+    visibility: hidden;
+    display: none;
+}
+
+footer {
+
+    margin-top: 50px;
+}
+
+
+.ideas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 50px;
+    margin-left: 40px;
+}
+
+.ideas-section h1{
+    text-align: center;
+}
+.note {
+    text-decoration: none;
+    color: #000;
+    background: hsl(192, 74%, 79%);
+    display: block;
+    height: 10em;
+    width: 10em;
+    padding: 1em;
+    box-shadow: 5px 5px 7px rgba(33, 33, 33, .7);
+    transform: rotate(-6deg);
+    transition: transform .15s linear;
+}
+
+.ideas-section ul li:nth-child(even) a {
+    transform: rotate(4deg);
+    position: relative;
+    top: 5px;
+    background: #cfc !important;
+}
+
+
+.ideas-section ul li:nth-child(3n) a {
+    transform: rotate(-3deg);
+    position: relative;
+    top: -5px;
+    background: #ccf !important;
+}
+
+.ideas-section ul li:nth-child(5n) a {
+    transform: rotate(5deg);
+    position: relative;
+    top: -10px;
+}
+
+.ideas-section ul li:hover,
+.ideas-section ul li:focus {
+    box-shadow: 10px 10px 7px rgba(0, 0, 0, .7);
+    transform: scale(1.25);
+    position: relative;
+    z-index: 5;
+}
+
+/* 
+ul li {
+    margin: 1em;
+} */
+
+.ideas-section {
+    margin-top: 50px;
+}
+
+.ideas-section>h1 {
+    color: #1389ff;
+
+    margin-left: 100px;
+}
+
+footer {
+    background-color: #dfdfdf;
+    height: auto;
+}
+
+
+
+footer p {
+    color: #fff;
+    text-align: center;
+
+}
+
+
+@media only screen and (max-width: 1260px) {
+    .view-projects,.view-projects3 {
+        gap: 55px
+    }
+}
+
+
+@media only screen and (max-width: 1200px) {
+    .view-projects,.view-projects3 {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .flip-card {
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+
+    .button-24 {
+        width: auto;
+    }
+}
+
+
+
+/*@media only screen and (max-width: 940px) {
+    .ideas {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .ideas li {
+        margin-left: 435px;
+    }
+
+
+}*/

@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Forms</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: NiceAdmin - v2.4.1
+  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+  <style>
+    .form{
+    width: clamp(420px,100%,650px);
+   /*margin: 0 auto;*/
+   margin-left: 250px;
+    padding: 1.5rem;
+    height: 650px;
+        }
+        .form h1{
+            text-align: center;
+        }
+    .btn{
+    padding: 0.75rem;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    background-color: #78797e;
+    color: #f3f3f3;
+    border-radius: .25rem;
+    cursor: pointer;
+    transition: all 250ms ease-in-out;
+    
+        }
+        .input-group{
+            margin: 2rem 0;
+            width: 100%;
+        }
+    
+    input{
+        display: block;
+        width: 800px;
+        padding: 0.75rem;
+        border: 1px solid #ccc;
+        border-radius: .25rem;
+
+    }
+    .with-50{
+        width: 45%;
+    }
+    .ml-auto{
+        margin-left: 30%;
+    }
+    .ml-auton{
+        margin-left: 50%;
+        position: relative;
+        bottom: 35px;
+
+    }
+    .ml-autos{
+        margin-left: 90%;
+        position: relative;
+        bottom: 35px;
+
+    }
+    .ml-autop{
+        margin-left: 20%;
+        position: relative;
+         bottom: 102px;
+
+    }
+    .ml-auton3{
+        margin-left: 50%;
+        position: relative;
+        top: 165px;
+
+    }
+    .ml-autos3{
+        margin-left: 90%;
+        position: relative;
+        top: 165px;
+
+    }
+    .ml-autop3{
+        margin-left: 20%;
+        position: relative;
+         top: 100px;
+
+    }
+    .btn:active{
+        transform: scale(.98);
+    }
+    .btn:hover{
+        box-shadow: 0 0 0 2px #fff, 0 0 0 3px var(--primary-color);
+    }
+    .text-center{
+        text-align: center;
+        color: #2c3e50;
+    }
+    .btns-group{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 1.5rem;
+        position: relative;
+        top: 80px;
+    }
+    .btns-group1{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        
+        position: relative;
+        bottom: 15px;
+        
+    }
+    .btns-group2{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 1.5rem;
+        position: relative;
+        top: 60px;
+    }
+    .form-step{
+        display: none;
+        transform-origin: top;
+        animation: animate 0.5s;
+    
+    
+    }
+   
+    @keyframes animate{
+    form{
+        transform: scale(1,0);
+        opacity: 0;
+    
+    }
+    
+    to{
+    transform: scale(1,1);
+    opacity: 1;
+    
+    
+    
+    }
+    
+    
+    
+    
+    }
+    .form-step.active{
+        display: block;
+    }
+    .progressbar{
+        position: relative;
+        display:flex;
+        justify-content: space-between;
+        margin: 2rem 0 4rem 0;
+        
+        counter-reset: step;
+    }
+    .progressbar::before, .progress{
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 4px;
+    width: 100%;
+    background-color: #dcdcdc;
+    }
+    .progress{
+    background-color: #01d28e;
+    width: 0%;
+    transition: 0.3s ease-in-out;
+    
+    
+    }
+    .progress-step{
+    width: 35px;
+    height: 35px;
+    background-color: #dcdcdc;
+    border-radius: 50%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    
+    }
+    .progress-step::before{
+        counter-increment: step;
+        content: counter(step);
+    
+    }
+    .progress-step::after{
+    content: attr(data-title);
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    font-size: .80rem;
+    color: #666666;
+    }
+    .progress-step.active{
+    background-color: #4964fd;
+    color: #f3f3f3;
+    
+    
+    }
+    
+     .file-upload-wrapper {
+     position: relative;
+     width: 100%;
+     height: 60px;
+     top: 90px;
+   }
+   .file-upload-wrapper:after {
+     content: attr(data-text);
+     font-size: 18px;
+     position: absolute;
+     top: 0;
+     left: 0;
+     background: #d3d3d3;
+     padding: 10px 15px;
+     display: block;
+     width: calc(100% - 40px);
+     pointer-events: none;
+     z-index: 20;
+     height: 50px;
+     line-height: 40px;
+     color: #999;
+     border-radius: 5px 10px 10px 5px;
+     font-weight: 300;
+   }
+   .file-upload-wrapper:before {
+     content: "Upload";
+     position: absolute;
+    
+     right: 0;
+     display: inline-block;
+     height: 70px;
+     background: #4CAF50;
+     color: #fff;
+     font-weight: 700;
+     z-index: 25;
+     font-size: 16px;
+     line-height: 60px;
+     padding: 0 15px;
+     text-transform: uppercase;
+     pointer-events: none;
+     border-radius: 0 5px 5px 0;
+   }
+   .file-upload-wrapper:hover:before {
+     background: #3d8c63;
+   }
+   .file-upload-wrapper input {
+     opacity: 0;
+     position: absolute;
+     top: 0;
+     right: 0;
+     bottom: 0;
+     left: 0;
+     z-index: 99;
+     height: 40px;
+     margin: 0;
+     padding: 0;
+     display: block;
+     cursor: pointer;
+     width: 100%;
+   }
+
+   .shado {
+  color: black;
+  text-shadow: 1px 1px 2px black, 0 0 25px #01d28e, 0 0 5px #01d28e;
+  margin-top:100px;
+  left:0px;
+  font-size: 70px;
+  text-align: center;
+  position: relative;
+  top: 70px;
+}
+
+  </style>
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+   
+    <a href="index.html" class="logo d-flex align-items-center">
+      <img src="assets/img/logo.png" alt="">
+      <span>Graduproject</span>
+    </a>
+    <div class="d-flex align-items-center justify-content-between">
+      <i class="bi bi-list toggle-sidebar-btn"></i>
+    </div><!-- End Logo -->
+
+    <div class="search-bar">
+      <form class="search-form d-flex align-items-center" method="POST" action="#">
+        <input type="text" name="query" placeholder="Search" title="Enter search keyword">
+        <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+      </form>
+    </div><!-- End Search Bar -->
+
+    <nav class="header-nav ms-auto">
+      <ul class="d-flex align-items-center">
+
+        <li class="nav-item d-block d-lg-none">
+          <a class="nav-link nav-icon search-bar-toggle " href="#">
+            <i class="bi bi-search"></i>
+          </a>
+        </li><!-- End Search Icon-->
+
+        <li class="nav-item dropdown">
+
+          <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+            <i class="bi bi-bell"></i>
+            <span class="badge bg-primary badge-number">4</span>
+          </a><!-- End Notification Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
+            <li class="dropdown-header">
+              You have 4 new notifications
+              <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item">
+              <i class="bi bi-exclamation-circle text-warning"></i>
+              <div>
+                <h4>Lorem Ipsum</h4>
+                <p>Quae dolorem earum veritatis oditseno</p>
+                <p>30 min. ago</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item">
+              <i class="bi bi-x-circle text-danger"></i>
+              <div>
+                <h4>Atque rerum nesciunt</h4>
+                <p>Quae dolorem earum veritatis oditseno</p>
+                <p>1 hr. ago</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item">
+              <i class="bi bi-check-circle text-success"></i>
+              <div>
+                <h4>Sit rerum fuga</h4>
+                <p>Quae dolorem earum veritatis oditseno</p>
+                <p>2 hrs. ago</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item">
+              <i class="bi bi-info-circle text-primary"></i>
+              <div>
+                <h4>Dicta reprehenderit</h4>
+                <p>Quae dolorem earum veritatis oditseno</p>
+                <p>4 hrs. ago</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li class="dropdown-footer">
+              <a href="#">Show all notifications</a>
+            </li>
+
+          </ul><!-- End Notification Dropdown Items -->
+
+        </li><!-- End Notification Nav -->
+
+        <li class="nav-item dropdown">
+
+          <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+            <i class="bi bi-chat-left-text"></i>
+            <span class="badge bg-success badge-number">3</span>
+          </a><!-- End Messages Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
+            <li class="dropdown-header">
+              You have 3 new messages
+              <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="message-item">
+              <a href="#">
+                <img src="assets/img/messages-1.jpg" alt="" class="rounded-circle">
+                <div>
+                  <h4>Maria Hudson</h4>
+                  <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                  <p>4 hrs. ago</p>
+                </div>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="message-item">
+              <a href="#">
+                <img src="assets/img/messages-2.jpg" alt="" class="rounded-circle">
+                <div>
+                  <h4>Anna Nelson</h4>
+                  <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                  <p>6 hrs. ago</p>
+                </div>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="message-item">
+              <a href="#">
+                <img src="assets/img/messages-3.jpg" alt="" class="rounded-circle">
+                <div>
+                  <h4>David Muldon</h4>
+                  <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                  <p>8 hrs. ago</p>
+                </div>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="dropdown-footer">
+              <a href="#">Show all messages</a>
+            </li>
+
+          </ul><!-- End Messages Dropdown Items -->
+
+        </li><!-- End Messages Nav -->
+
+        <li class="nav-item dropdown pe-3">
+
+          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+            <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
+            <span class="d-none d-md-block dropdown-toggle ps-2">User Name</span>
+          </a><!-- End Profile Iamge Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+            <li class="dropdown-header">
+              <h6>usre name</h6>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                <i class="bi bi-person"></i>
+                <span>My Profile</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                <i class="bi bi-gear"></i>
+                <span>Account Settings</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
+                <i class="bi bi-question-circle"></i>
+                <span>Need Help?</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="#">
+                <i class="bi bi-box-arrow-right"></i>
+                <span>Sign Out</span>
+              </a>
+            </li>
+
+          </ul><!-- End Profile Dropdown Items -->
+        </li><!-- End Profile Nav -->
+
+      </ul>
+    </nav><!-- End Icons Navigation -->
+
+  </header><!-- End Header -->
+
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="index.html">
+          <i class="bi bi-grid"></i>
+          <span>Dashboard</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+
+      
+
+   
+      <li class="nav-heading">Pages</li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="home.html">
+          <i class="bi bi-person"></i>
+          <span>Home</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="users-profile.html">
+          <i class="bi bi-person"></i>
+          <span>Profile</span>
+        </a>
+      </li><!-- End Profile Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="bbootstrap.html">
+          <i class="bi bi-file-earmark"></i>
+          <span>Add Project</span>
+        </a>
+      </li><!-- End F.A.Q Page Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="add  idea.html">
+          <i class="bi bi-file-earmark"></i>
+          <span>Add idea</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="view-projects.html">
+          <i class="bi bi-list"></i>
+          <span>View Projects</span>
+        </a>
+      </li><!-- End Contact Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="all-tasks.html">
+          <i class="bi bi-check-circle"></i>
+          <span>All Tasks</span>
+        </a>
+      </li><!-- End Register Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="proje-discu.html">
+          <i class="bi bi-list"></i>
+          <span>Project discussions</span>
+        </a>
+      </li><!-- End Login Page Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="chat.html">
+          <i class="bi bi-envelope"></i>
+          <span>Chat</span>
+        </a>
+      </li><!-- End Blank Page Nav -->
+
+    </ul>
+
+  </aside><!-- End Sidebar-->
+  <main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Student Form</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="Dashbored.html">home</a></li>
+         
+          <li class="breadcrumb-item active">Add idea</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+      <div class="row">
+        <div class="col-lg-10">
+
+          <div class="card" >
+            <div class="card-body">
+              <h5 class="card-title">**Please submit your project idea for consideration and approval</h5>
+
+              <!-- General Form Elements -->
+              <form>
+                <div class="row mb-3">
+                  <label for="inputText" class="col-sm-2 col-form-label">Name</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control">
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label for="inputNumber" class="col-sm-2 col-form-label">Group number</label>
+                  <div class="col-sm-10">
+                    <input type="number" class="form-control">
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label for="inputgroup name" class="col-sm-2 col-form-label">Group name </label>
+                  <div class="col-sm-10">
+                    <input type="group name" class="form-control">
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label for="inputnamep" class="col-sm-2 col-form-label">project name</label>
+                  <div class="col-sm-10">
+                    <input type="namep" class="form-control">
+                  </div>
+                </div>
+                
+
+                <div class="row mb-3">
+                  <label for="inputdescription" class="col-sm-2 col-form-label">Description</label>
+                  <div class="col-sm-10">
+                    <textarea class="form-control" style="height: 100px"placeholder="abstract about your project..."></textarea>
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label for="inputsuper" class="col-sm-2 col-form-label">Supervisors name</label>
+                  <div class="col-sm-10">
+                    <textarea class="form-control" style="height: 100px" placeholder="choose 3 suggestion supervisor..."></textarea>
+                  </div>
+                </div>
+                <fieldset class="row mb-3">
+                  <legend class="col-form-label col-sm-2 pt-0">status</legend>
+                  <div class="col-sm-10">
+                    <div class=" form-check form-check-inline">
+                      <input  class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+                      <label class="form-check-label" for="gridRadios1">
+                       مشروع تخرج1
+                      </label>
+                    </div>
+                    <div class=" form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                      <label class="form-check-label" for="gridRadios2">
+                       مشروع تخرج2
+                      </label>
+                    </div>
+                    
+                  </div>
+                </fieldset>
+                
+
+                  
+
+                <div class="row mb-3">
+                  <label class="col-sm-2 col-form-label">major</label>
+                  <div class="col-sm-10">
+                    <select class="form-select" aria-label="Default select example">
+                      <option selected>select your major</option>
+                      <option value="1">computer Science</option>
+                      <option value="2">information science</option>
+                      <option value="3">Data science</option>
+                      <option value="4">information security</option>
+                    </select>
+                  </div>
+                </div>
+
+                
+
+                <div class="row mb-3">
+                  <label class="col-sm-2 col-form-label">Submit Button</label>
+                  <div class="col-sm-10">
+                    <button type="submit" class="btn btn-primary" style="background-color:#4964fd ;">Submit Form</button>
+                  </div>
+                </div>
+
+              </form><!-- End General Form Elements -->
+
+            </div>
+          </div>
+
+        </div>
+
+        <div class="col-lg-6">
+
+
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    <div class="copyright">
+      &copy; Copyright <strong><span>web page</span></strong>. All Rights Reserved
+    </div>
+  
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/chart.js/chart.min.js"></script>
+  <script src="assets/vendor/echarts/echarts.min.js"></script>
+  <script src="assets/vendor/quill/quill.min.js"></script>
+  <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="assets/vendor/tinymce/tinymce.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
